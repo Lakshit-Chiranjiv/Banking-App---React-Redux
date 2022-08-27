@@ -22,3 +22,16 @@
 .logo:hover {
   filter: drop-shadow(0 0 2em #3b3b3b);
 }
+
+.homeHero{
+  margin-top: 30px;
+}
+
+.homeHero h1{
+  font-size: 72px;
+  text-align: center;
+}
+
+.homeHeroImg{
+  width: 360px;
+}
