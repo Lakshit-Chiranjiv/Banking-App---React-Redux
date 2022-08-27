@@ -8,16 +8,17 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
+  align-items: center;
 }
 
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
+  margin: auto;
+  width: 130px;
+  transition: all 0.5s;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #3b3b3b);
 }
