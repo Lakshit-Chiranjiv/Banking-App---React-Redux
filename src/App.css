@@ -4,6 +4,12 @@
   padding: 2rem;
 }
 
+.App{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
