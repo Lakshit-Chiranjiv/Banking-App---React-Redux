@@ -1,13 +1,11 @@
 import './App.css'
-import { Title } from '@mantine/core';
-import NavLinks from './components/NavLinks';
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
     <div className="App">
-      <Title order={1}>Banking Bay</Title>
-      <NavLinks/>
+      <Navbar/>
     </div>
   )
 }
