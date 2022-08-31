@@ -2,7 +2,7 @@ import React from 'react'
 import depositImg from './../assets/deposit.png'
 import { Group } from '@mantine/core'
 import { useState } from 'react';
-import { NumberInput,Button } from '@mantine/core';
+import { NumberInput,Button,Title,Image } from '@mantine/core';
 
 
 const DepositPage = () => {
@@ -10,11 +10,13 @@ const DepositPage = () => {
   return (
     <>
       <Group position='center'>
-          <h1>Deposit your Money</h1>
+          <Title order={1}>Deposit your Money</Title>
       </Group>
+
       <Group position='center'>
-          <img src={depositImg} alt="deposit" />
+          <Image src={depositImg} alt="deposit" style={{width: '24rem'}} />
       </Group>
+
       <Group position='center' style={{margin: '70px auto'}}>
           <NumberInput 
               placeholder="Enter amount"
@@ -26,10 +28,15 @@ const DepositPage = () => {
                   : '₹ '
               }
 
-              value={value} 
+              value={value}
               onChange={(val) => setValue(val)} 
           />
           <Button variant="gradient" gradient={{ from: 'orange', to: 'red' }}>Deposit</Button>
+      </Group>
+
+      <Group position='center'>
+          <Title order={2}>Current Amount in Bank : </Title>
+          <Title order={2} color='green.5'>₹500</Title>
       </Group>
     </>
   )
