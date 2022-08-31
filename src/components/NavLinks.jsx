@@ -7,7 +7,7 @@ const NavLinks = () => {
   const [burgerOpen,setBurgerOpen] = useState(false)
 
   return (
-    <Menu transition="rotate-right" transitionDuration={150} shadow="md" width={200}>
+    <Menu transition="rotate-right" transitionDuration={150} shadow="md" width={200} onClose={()=>setBurgerOpen(false)}>
       <Menu.Target>
         <Burger
           opened={burgerOpen}
