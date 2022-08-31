@@ -35,3 +35,23 @@
 .homeHeroImg{
   width: 360px;
 }
+
+.footerDiv{
+  margin-top: 24px;
+}
+
+.footerDiv p{
+  font-weight: 400;
+  text-align: center;
+}
+
+.socialLinks{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.socialLinks a img{
+  width: 36px;
+}
