@@ -2,7 +2,7 @@ import React from 'react'
 import withdrawImg from './../assets/withdraw.png'
 import { Group } from '@mantine/core'
 import { useState } from 'react';
-import { NumberInput,Button } from '@mantine/core';
+import { NumberInput,Button,Title,Image } from '@mantine/core';
 
 
 const WithdrawPage = () => {
@@ -10,11 +10,13 @@ const WithdrawPage = () => {
   return (
     <>
       <Group position='center'>
-          <h1>Withdraw Money</h1>
+        <Title order={1}>Withdraw Money</Title>
       </Group>
+
       <Group position='center'>
-          <img src={withdrawImg} alt="withdraw" />
+        <Image src={withdrawImg} alt="withdraw" style={{width: '24rem'}} />
       </Group>
+
       <Group position='center' style={{margin: '70px auto'}}>
           <NumberInput 
               placeholder="Enter amount"
@@ -30,6 +32,11 @@ const WithdrawPage = () => {
               onChange={(val) => setValue(val)} 
           />
           <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}>Withdraw</Button>
+      </Group>
+
+      <Group position='center'>
+          <Title order={2}>Current Amount in Bank : </Title>
+          <Title order={2} color='green.5'>₹500</Title>
       </Group>
     </>
   )
