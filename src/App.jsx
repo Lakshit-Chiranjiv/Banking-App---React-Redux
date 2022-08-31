@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import Homehero from './components/Homehero'
 import Navbar from './components/Navbar'
 import DepositPage from './pages/DepositPage'
+import WithdrawPage from './pages/WithdrawPage'
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       <Navbar/>
       {/* <Homehero/> */}
-      <DepositPage/>
+      {/* <DepositPage/> */}
+      <WithdrawPage/>
       <Footer/>
     </div>
   )
