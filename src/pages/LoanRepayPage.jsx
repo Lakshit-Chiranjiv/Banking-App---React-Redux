@@ -4,6 +4,7 @@ import { Group } from '@mantine/core'
 import { useState } from 'react';
 import { NumberInput,Button,Title,Image } from '@mantine/core';
 import MoneyData from '../components/MoneyData';
+import HomeButton from '../components/HomeButton';
 
 
 const LoanRepayPage = () => {
@@ -34,6 +35,8 @@ const LoanRepayPage = () => {
           />
           <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}>Repay Loan</Button>
       </Group>
+
+      <HomeButton/>
 
       <MoneyData/>
     </>
