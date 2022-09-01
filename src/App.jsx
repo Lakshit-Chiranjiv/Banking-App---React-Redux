@@ -1,3 +1,4 @@
+import { Routes,Route } from 'react-router-dom'
 import './App.css'
 import Footer from './components/Footer'
 import Homehero from './components/Homehero'
@@ -8,6 +9,7 @@ import LoanPage from './pages/LoanPage'
 import LoanRepayPage from './pages/LoanRepayPage'
 import TakeLoanPage from './pages/TakeLoanPage'
 import WithdrawPage from './pages/WithdrawPage'
+
 
 function App() {
 
@@ -20,7 +22,16 @@ function App() {
       {/* <LoanPage/> */}
       {/* <LoanRepayPage/> */}
       {/* <TakeLoanPage/> */}
-      <AboutPage/>
+      {/* <AboutPage/> */}
+      <Routes>
+        <Route path='/' element={<Homehero/>} />
+        <Route path='/deposit' element={<DepositPage/>} />
+        <Route path='/withdraw' element={<WithdrawPage/>} />
+        <Route path='/loan' element={<LoanPage/>} />
+        <Route path='/loan/pay' element={<LoanRepayPage/>} />
+        <Route path='/loan/take' element={<TakeLoanPage/>} />
+        <Route path='/about' element={<AboutPage/>} />
+      </Routes>
       <Footer/>
     </div>
   )
