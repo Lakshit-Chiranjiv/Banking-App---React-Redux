@@ -3,6 +3,7 @@ import withdrawImg from './../assets/withdraw.png'
 import { Group } from '@mantine/core'
 import { useState } from 'react';
 import { NumberInput,Button,Title,Image } from '@mantine/core';
+import MoneyData from '../components/MoneyData';
 
 
 const WithdrawPage = () => {
@@ -34,10 +35,7 @@ const WithdrawPage = () => {
           <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}>Withdraw</Button>
       </Group>
 
-      <Group position='center'>
-          <Title order={2}>Current Amount in Bank : </Title>
-          <Title order={2} color='green.5'>₹500</Title>
-      </Group>
+      <MoneyData/>
     </>
   )
 }
