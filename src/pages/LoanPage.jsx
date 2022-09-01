@@ -3,6 +3,7 @@ import { Button,Title,Image,Group } from '@mantine/core';
 import loanImg from './../assets/loan.png'
 import MoneyData from '../components/MoneyData';
 import HomeButton from '../components/HomeButton';
+import { Link } from 'react-router-dom'
 
 const LoanPage = () => {
   return (
@@ -16,8 +17,12 @@ const LoanPage = () => {
       </Group>
 
       <Group position='center' style={{margin: '70px auto'}}>
-          <Button variant="gradient" gradient={{ from: 'orange', to: 'red', deg: 105 }}>Take Loan</Button>
-          <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}>Pay Loan</Button>
+          <Link to='/loan/take'>
+            <Button variant="gradient" gradient={{ from: 'orange', to: 'red', deg: 105 }}>Take Loan</Button>
+          </Link>
+          <Link to='/loan/pay'>
+            <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}>Pay Loan</Button>
+          </Link>
       </Group>
 
       <HomeButton/>
