@@ -5,19 +5,25 @@ import AppLogo from './../assets/logo.png'
 
 const Navbar = () => {
   return (
-    <Group className='navGrp'>
-      <Group>
+    <>
+      <Group position='center'>
         <Title order={1}>Banking Bay</Title>
-        <div className='logo'>
-          <Image
-            radius="md"
-            src={AppLogo}
-            alt="Random unsplash image"
-          />
-        </div>
       </Group>
-      <NavLinks/>
-    </Group>
+      <Group className='navGrp'>
+        <Group>
+          {/* <Title order={1}>Banking Bay</Title> */}
+          <div className='logo'>
+            <Image
+              radius="md"
+              src={AppLogo}
+              alt="Random unsplash image"
+              style={{width: '10rem'}}
+            />
+          </div>
+        </Group>
+        <NavLinks/>
+      </Group>
+    </>
   )
 }
 
