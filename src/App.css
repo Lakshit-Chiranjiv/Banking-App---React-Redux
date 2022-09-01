@@ -9,6 +9,7 @@
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .logo {
@@ -20,7 +21,7 @@
   transition: all 0.5s;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #3b3b3b);
+  filter: drop-shadow(0 0 2em #ffec9e);
 }
 
 .homeHero{
