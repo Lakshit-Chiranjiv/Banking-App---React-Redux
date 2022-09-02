@@ -6,3 +6,12 @@ export const depositMoney = (depositAmount) => {
         })
     }
 }
+
+export const withdrawMoney = (withdrawAmount) => {
+    return (dispatch) => {
+        dispatch({
+            type: 'WITHDRAW',
+            payload: withdrawAmount
+        })
+    }
+}
