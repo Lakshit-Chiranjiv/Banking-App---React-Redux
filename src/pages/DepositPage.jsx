@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { NumberInput,Button,Title,Image } from '@mantine/core';
 import MoneyData from '../components/MoneyData';
 import HomeButton from '../components/HomeButton';
+import { IconCoinRupee } from '@tabler/icons';
 
 
 const DepositPage = ({depositMoney}) => {
@@ -24,6 +25,7 @@ const DepositPage = ({depositMoney}) => {
               placeholder="Enter amount in ₹"
               min={0}
               value={value}
+              icon={<IconCoinRupee size={18}/>}
               onChange={(val) => setValue(val)} 
           />
           <Button variant="gradient" gradient={{ from: 'orange', to: 'red' }} onClick={()=>{

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { NumberInput,Button,Title,Image } from '@mantine/core';
 import MoneyData from '../components/MoneyData';
 import HomeButton from '../components/HomeButton';
-
+import { IconCoinRupee } from '@tabler/icons';
 
 const LoanRepayPage = ({payLoan}) => {
     const [value, setValue] = useState(0);
@@ -23,6 +23,7 @@ const LoanRepayPage = ({payLoan}) => {
           <NumberInput 
               placeholder="Enter amount in ₹"
               min={0}
+              icon={<IconCoinRupee size={18}/>}
               value={value} 
               onChange={(val) => setValue(val)} 
           />
