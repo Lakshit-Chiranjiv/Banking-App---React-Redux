@@ -2,7 +2,7 @@ import React from 'react'
 import loanRepayImg from './../assets/loanRepay.png'
 import { Group } from '@mantine/core'
 import { useState } from 'react';
-import { NumberInput,Button,Title,Image } from '@mantine/core';
+import { NumberInput,Button,Title,Image,Text } from '@mantine/core';
 import MoneyData from '../components/MoneyData';
 import HomeButton from '../components/HomeButton';
 import { IconCoinRupee } from '@tabler/icons';
@@ -10,12 +10,20 @@ import { useSelector } from 'react-redux'
 
 const LoanRepayPage = ({payLoan}) => {
     const [value, setValue] = useState(0);
+    const [errorMsg, setErrorMsg] = useState('')
 
     const { loan } = useSelector((state)=> state) 
 
     const payLoanHandler = () => {
       if(loan >= value){
+        setErrorMsg('')
         payLoan(value)
+      }
+      else{
+        setErrorMsg('Can\'t pay more than loaned')
+        setTimeout(()=>{
+          setErrorMsg('')
+        },7000)
       }
     }
   return (
@@ -38,6 +46,20 @@ const LoanRepayPage = ({payLoan}) => {
           />
           <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }} onClick={payLoanHandler}>Repay Loan</Button>
       </Group>
+
+      {
+        errorMsg && 
+        <Group position='center'>
+          <Text
+            component="span"
+            align="center"
+            variant="gradient"
+            gradient={{ from: 'orange', to: 'red', deg: 45 }}
+            weight={700}
+            style={{margin: '20px auto'}}
+          >{errorMsg}</Text>
+        </Group>
+      }
 
       <HomeButton/>
 
