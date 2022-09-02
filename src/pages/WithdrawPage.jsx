@@ -2,7 +2,7 @@ import React from 'react'
 import withdrawImg from './../assets/withdraw.png'
 import { Group } from '@mantine/core'
 import { useState } from 'react';
-import { NumberInput,Button,Title,Image } from '@mantine/core';
+import { NumberInput,Button,Title,Image,Text } from '@mantine/core';
 import MoneyData from '../components/MoneyData';
 import HomeButton from '../components/HomeButton';
 import { IconCoinRupee } from '@tabler/icons';
@@ -10,12 +10,21 @@ import { useSelector } from 'react-redux'
 
 const WithdrawPage = ({withdrawMoney}) => {
     const [value, setValue] = useState(0);
+    const [errorMsg, setErrorMsg] = useState('')
 
     const { amount } = useSelector((state)=> state) 
 
     const withdrawHandler = () => {
-      if(amount >= value)
+      if(amount >= value){
+        setErrorMsg('')
         withdrawMoney(value)
+      }
+      else{
+        setErrorMsg('Not Enough Amount in Bank')
+        setTimeout(()=>{
+          setErrorMsg('')
+        },7000)
+      }
     }
     
   return (
@@ -38,6 +47,20 @@ const WithdrawPage = ({withdrawMoney}) => {
           />
           <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }} onClick={withdrawHandler}>Withdraw</Button>
       </Group>
+
+      {
+        errorMsg && 
+        <Group position='center'>
+          <Text
+            component="span"
+            align="center"
+            variant="gradient"
+            gradient={{ from: 'orange', to: 'red', deg: 45 }}
+            weight={700}
+            style={{margin: '20px auto'}}
+          >{errorMsg}</Text>
+        </Group>
+      }
 
       <HomeButton/>
 
