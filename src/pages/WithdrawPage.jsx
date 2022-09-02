@@ -7,7 +7,7 @@ import MoneyData from '../components/MoneyData';
 import HomeButton from '../components/HomeButton';
 
 
-const WithdrawPage = () => {
+const WithdrawPage = ({withdrawMoney}) => {
     const [value, setValue] = useState(0);
   return (
     <>
@@ -33,7 +33,9 @@ const WithdrawPage = () => {
               value={value} 
               onChange={(val) => setValue(val)} 
           />
-          <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}>Withdraw</Button>
+          <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }} onClick={() => {
+            withdrawMoney(value)
+          }}>Withdraw</Button>
       </Group>
 
       <HomeButton/>
