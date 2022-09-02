@@ -21,15 +21,8 @@ const TakeLoanPage = ({takeLoan}) => {
 
       <Group position='center' style={{margin: '70px auto'}}>
           <NumberInput 
-              placeholder="Enter amount"
+              placeholder="Enter amount in ₹"
               min={0}
-              parser={(value) => value.replace(/\$\s?|(,*)/g, '')}
-              formatter={(value) =>
-                !Number.isNaN(parseFloat(value))
-                  ? `₹ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                  : '₹ '
-              }
-
               value={value} 
               onChange={(val) => setValue(val)} 
           />
