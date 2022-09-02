@@ -24,3 +24,12 @@ export const takeLoan = (loanAmount) => {
         })
     }
 }
+
+export const payLoan = (loanAmount) => {
+    return (dispatch) => {
+        dispatch({
+            type: 'REPAY',
+            payload: loanAmount
+        })
+    }
+}
