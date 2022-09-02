@@ -6,9 +6,18 @@ import { NumberInput,Button,Title,Image } from '@mantine/core';
 import MoneyData from '../components/MoneyData';
 import HomeButton from '../components/HomeButton';
 import { IconCoinRupee } from '@tabler/icons';
+import { useSelector } from 'react-redux'
 
 const WithdrawPage = ({withdrawMoney}) => {
     const [value, setValue] = useState(0);
+
+    const { amount } = useSelector((state)=> state) 
+
+    const withdrawHandler = () => {
+      if(amount >= value)
+        withdrawMoney(value)
+    }
+    
   return (
     <>
       <Group position='center'>
@@ -27,9 +36,7 @@ const WithdrawPage = ({withdrawMoney}) => {
               value={value} 
               onChange={(val) => setValue(val)} 
           />
-          <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }} onClick={() => {
-            withdrawMoney(value)
-          }}>Withdraw</Button>
+          <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }} onClick={withdrawHandler}>Withdraw</Button>
       </Group>
 
       <HomeButton/>
