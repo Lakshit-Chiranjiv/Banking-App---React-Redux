@@ -7,7 +7,7 @@ import MoneyData from '../components/MoneyData';
 import HomeButton from '../components/HomeButton';
 
 
-const LoanRepayPage = () => {
+const LoanRepayPage = ({payLoan}) => {
     const [value, setValue] = useState(0);
   return (
     <>
@@ -33,7 +33,9 @@ const LoanRepayPage = () => {
               value={value} 
               onChange={(val) => setValue(val)} 
           />
-          <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}>Repay Loan</Button>
+          <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }} onClick={() => {
+            payLoan(value)
+          }}>Repay Loan</Button>
       </Group>
 
       <HomeButton/>
