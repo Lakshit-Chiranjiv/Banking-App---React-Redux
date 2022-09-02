@@ -7,7 +7,7 @@ import MoneyData from '../components/MoneyData';
 import HomeButton from '../components/HomeButton';
 
 
-const DepositPage = () => {
+const DepositPage = ({depositMoney}) => {
     const [value, setValue] = useState(0);
   return (
     <>
@@ -33,7 +33,9 @@ const DepositPage = () => {
               value={value}
               onChange={(val) => setValue(val)} 
           />
-          <Button variant="gradient" gradient={{ from: 'orange', to: 'red' }}>Deposit</Button>
+          <Button variant="gradient" gradient={{ from: 'orange', to: 'red' }} onClick={()=>{
+            depositMoney(value)
+          }}>Deposit</Button>
       </Group>
 
       <HomeButton/>
