@@ -31,11 +31,11 @@ function App() {
       {/* <AboutPage/> */}
       <Routes>
         <Route path='/' element={<Homehero/>} />
-        <Route path='/deposit' element={<DepositPage/>} />
-        <Route path='/withdraw' element={<WithdrawPage/>} />
+        <Route path='/deposit' element={<DepositPage depositMoney={depositMoney}/>} />
+        <Route path='/withdraw' element={<WithdrawPage withdrawMoney={withdrawMoney}/>} />
         <Route path='/loan' element={<LoanPage/>} />
-        <Route path='/loan/pay' element={<LoanRepayPage/>} />
-        <Route path='/loan/take' element={<TakeLoanPage/>} />
+        <Route path='/loan/pay' element={<LoanRepayPage payLoan={payLoan}/>} />
+        <Route path='/loan/take' element={<TakeLoanPage takeLoan={takeLoan}/>} />
         <Route path='/about' element={<AboutPage/>} />
       </Routes>
       <Footer/>
