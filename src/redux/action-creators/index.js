@@ -15,3 +15,12 @@ export const withdrawMoney = (withdrawAmount) => {
         })
     }
 }
+
+export const takeLoan = (loanAmount) => {
+    return (dispatch) => {
+        dispatch({
+            type: 'TAKE',
+            payload: loanAmount
+        })
+    }
+}
