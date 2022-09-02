@@ -6,9 +6,18 @@ import { NumberInput,Button,Title,Image } from '@mantine/core';
 import MoneyData from '../components/MoneyData';
 import HomeButton from '../components/HomeButton';
 import { IconCoinRupee } from '@tabler/icons';
+import { useSelector } from 'react-redux'
 
 const LoanRepayPage = ({payLoan}) => {
     const [value, setValue] = useState(0);
+
+    const { loan } = useSelector((state)=> state) 
+
+    const payLoanHandler = () => {
+      if(loan >= value){
+        payLoan(value)
+      }
+    }
   return (
     <>
       <Group position='center'>
@@ -27,9 +36,7 @@ const LoanRepayPage = ({payLoan}) => {
               value={value} 
               onChange={(val) => setValue(val)} 
           />
-          <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }} onClick={() => {
-            payLoan(value)
-          }}>Repay Loan</Button>
+          <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }} onClick={payLoanHandler}>Repay Loan</Button>
       </Group>
 
       <HomeButton/>
